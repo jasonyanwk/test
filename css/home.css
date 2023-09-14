@@ -1,0 +1,556 @@
+/*
+ * @Author: shaky
+ * @Date: 2023-09-09 17:22:42
+ * @LastEditTime: 2023-09-11 23:01:08
+ * @FilePath: /cycle1/css/home.css
+ * Intimat: jason
+ * Copyright (c) 2023 by shakywdy@gmail.com All Rights Reserved. 
+ */
+
+
+
+/* header */
+.custom-header {
+
+  color: #fff;
+  padding: 20px;
+  text-shadow: 1px -1px #565454,-1px 1px #999, -5px 5px 5px #0f000080;
+}
+
+.custom-header .header-ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.custom-header .header-li {
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.custom-header .header-li:hover {
+  background-color: #ffffff;
+  transform: translateY(8px);
+
+  box-shadow:rgb(196, 240, 205) 0px 0px 30px;   
+
+}
+.custom-header .header-li:hover a{
+  color: #030303;
+}
+
+
+.custom-header .header-li a {
+  color: #ffffff;
+  font-family:  Impact;
+  text-decoration: none;
+  font-size: 27px;
+  transition: color 0.3s ease;
+  
+}
+
+/* header end */
+
+/* content??.. */
+.logo{
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 100px;
+  letter-spacing: -4px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+  /* transform-style: preserve-3d; */
+}
+/* logo  */
+.logo span {
+  text-shadow: 8px 0 8px #14502b;
+  position: relative;
+  z-index: var(--i);
+  opacity: 0;
+  
+  animation: move 1s cubic-bezier(0.42, 0, 0.67, 1.29) forwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateY(300%); 
+    text-shadow: 8px 0 8px #14502b;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+    text-shadow: 8px 0 8px #14502b;
+  }
+}
+
+/* logo end */
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+.infotext{
+  text-decoration: none;
+  font-size: 32px;
+}
+li{
+  list-style: none;
+}
+
+body{
+ height: 100%;
+
+   background: linear-gradient(to bottom, #003512, #02bc5c); 
+}
+/* content end   ?? */
+
+/* footer */
+footer {
+  margin-top: 10%;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+footer h3{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  text-shadow: 1px -1px #1a1a1a,-1px 1px #000000, -5px 5px 5px #0f000080;
+
+}
+/* fotter line */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%; 
+  width: 125%; 
+  height: 4px;
+  transform: translateX(-50%); 
+  background-image: linear-gradient(to right, transparent 50%, #0d9343 50%); 
+}
+
+.link-columns {
+  display: flex;
+}
+
+.link-columns .column {
+  flex: 1;
+  border-right: 3px solid #0d9343; 
+  padding-right: 10px; 
+}
+
+.link-columns .column:last-child {
+  border-right: none; /
+}
+
+.link-columns .column a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.link-columns .column a:last-child {
+  margin-bottom: 0; 
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 30px;
+  text-shadow: 1px -1px #1a1a1a,-1px 1px #000000, -5px 5px 5px #0f000080;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+footer h2{
+  color: #ffffff;
+  font-size: 40px;
+  text-shadow: 1px -1px #1a1a1a,-1px 1px #000000, -5px 5px 5px #0f000080;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* footer end */
+
+/* info list */
+#info-box {
+  position: absolute;
+  width: 40%;
+  padding: 10px;
+  display: none;
+  transition: opacity 0.2s ease;
+
+}
+
+
+.infolist {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: -65%;
+}
+.infoul{
+  position: relative;
+  transform: skewY(-15deg);
+}
+.infoul li{
+  position: relative;
+  width: 200px;
+  background: #06ae57;
+  z-index: var(--z);
+  padding: 15px;
+  border-bottom: 1px solid #a8a8a8;
+  transition: 0.5s;
+  
+}
+.infoul li:hover{
+  transform: translate(50px,10px) scale(1.1);
+  background: #f8f8f8;
+  box-shadow:rgb(196, 240, 205) 0px 0px 30px;   
+  
+}
+.infoul li a{
+  color: #ffffff;
+  text-shadow: 1px -1px #999,-1px 1px #999, -5px 5px 5px #0f000080;
+  letter-spacing: 8px;
+  font-family:  Impact;
+  
+}
+.infoul li:hover a{
+  color:#090909;
+}
+.infoul li::before{
+  content: '';
+  width: 40px;
+  height: 100%;
+  background:  #068644;
+  display: block;
+  position: absolute;
+  left: -40px;
+  top: 0;
+  transform: skewY(45deg);
+  transform-origin: right;
+  transition: 0.5s;
+
+}
+.infoul li:hover::before{
+  background: #f8f8f8;
+  box-shadow:rgb(196, 240, 205) 0px 0px 30px;   
+}
+.infoul li::after{
+  content: '';
+  width: 100%;
+  height: 40px;
+  background:   #068644;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -40px;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  transition: 0.5s;
+
+}
+.infoul li:hover::after{
+  background: #f8f8f8;
+  box-shadow:rgb(196, 240, 205) 0px 0px 30px;   
+}
+.infoul li:last-child::after{
+  box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.452);
+}
+
+.font-style-1 {
+  font-family:  Impact;
+  font-size: 55px;
+
+  color: rgb(255, 255, 255);
+  text-shadow: 1px -1px #717171,-1px 1px #8b8b8b, -8px 8px 5px #010e0480;
+
+}
+
+.font-style-2 {
+  font-family:  Impact;
+  font-size: 30px;
+
+  color: rgb(255, 255, 255);
+  text-shadow: 1px -1px #717171,-1px 1px #8b8b8b, -8px 8px 5px #010e0480;
+}
+
+.font-style-3 {
+  font-family:  Impact;
+  font-size: 55px;
+
+  text-shadow: 1px -1px #717171,-1px 1px #8b8b8b, -8px 8px 5px #010e0480;
+  color: rgb(229, 41, 41);
+
+}
+
+.font-style-4 {
+  font-family:  Impact;
+  font-size: 34px;
+
+  color: rgb(255, 255, 255);
+  text-shadow: 1px -1px #717171,-1px 1px #8b8b8b, -8px 8px 5px #010e0480;
+}
+
+.font-style-5 {
+  font-family: Impact;
+  font-size: 20px;
+
+  color: purple;
+}
+/* info list end */
+
+
+/* body end */
+
+/* BUTTON*/
+
+.button-container {
+    position: fixed;
+    bottom: 180px;
+    right: 160px; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 100vh;
+}
+.gbcontainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+   align-items: center;
+  
+  
+}
+
+
+.gobutton{
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 100px;
+    border: 8px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 25px;
+    line-height: 30px;        
+    box-shadow:rgb(196, 240, 205) 0px 0px 0px;   
+    transition: all .2s ease-out;
+    font-size: 55px;
+    color: #ffffff;
+
+}
+.gotext{
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    font-family:  Impact;
+    text-shadow: 1px -1px #fff,-1px 1px #08750b, -5px 5px 5px #010e0480;
+}
+.gobutton:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 150px rgb(163, 240, 179),
+    0 0 0 rgb(163, 240, 179),
+    inset 18px 18px 30px rgb(163, 240, 179),
+    inset -18px -18px 30px rgb(163, 240, 179);
+    font-size: 40px;
+ 
+    transition: all .2s ease-out;
+    line-height: 40px;
+
+}
+
+.hpbutton{
+    width: 130px;
+    height: 130px;
+    display: flex;
+    
+    justify-content: center;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 25px;
+    box-shadow:rgb(196, 240, 205) 0px 0px 0px;
+      
+    transition: all .2s ease-out;
+    transition: all .2s ease-out;
+
+
+} 
+.hpimg{
+    width: 130px;
+    transition: all .2s ease-out;
+}
+.hpbutton:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 150px rgb(163, 240, 179),
+    0 0 0 rgb(163, 240, 179),
+    inset 18px 18px 30px rgb(163, 240, 179),
+    inset -18px -18px 30px rgb(163, 240, 179);
+}
+.hpbutton:hover img{
+    width: 140px;
+}
+
+
+/* button end */
+
+/* chat box css */
+#chat-box {
+   
+   display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 400px;
+    height: 500px;
+    background-color: #f8f8f8;
+    border: 2px solid #292929;
+    border-radius: 20px;
+    box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.534);
+    z-index: 9999;
+
+}
+
+#chat-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .adminicon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.452);
+    border-radius: 60px;
+    margin-bottom: 10px;
+  }
+
+.inputerea {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+
+}
+.bg1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:  10px;
+  
+}
+
+#message-input {
+
+    width: 89%; 
+    border-radius: 15px;
+    border: solid #dddddd78;
+    background-color: #ffffff;
+    padding: 15px;
+    font-size: 23px;
+    line-height: 20px;
+    resize: none; 
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+#send-button {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    right: 23px;
+    top: 15px;
+    font-size: 23px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  /* chat box ani */
+@keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  #chat-box.open {
+    display: block;
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  #chat-box.closed {
+    animation: slideOut 0.3s ease forwards;
+  }
+ /* chat box ani */
+ .hide-button {
+    background: none;
+    border: none;
+    color: #727272;
+    cursor: pointer;
+    float: right;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 15px; 
+    margin-top :5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.closeimg{
+    width: 30px; 
+    height: 30px; 
+}
+.hide-button:hover {
+    background: rgb(248, 69, 69);
+
+}
+
+/* chat box css end */
+
+
+

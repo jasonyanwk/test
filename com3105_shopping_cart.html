@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+	<link rel="stylesheet" type="text/css" href="css/shopping.css">
+   
+</head>
+
+<body>
+	<!--Header-->
+	<header class="header">
+		<nav class="navbar">
+		  <a href="index.html">
+			<img src="img/logo.webp">
+		  </a>
+		  <ul class="menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Contact</a></li>
+		  </ul>
+		</nav>
+	  </header>
+
+	<!--Product list-->
+   <div>
+		<ul class="header-ul">
+        <button id="All" onclick="showAllProducts()">All</button>
+        <button id="jersey" onclick="showProducts('jersey')">JERSEY</button>
+        <button id="button2" onclick="showProducts('short')">SHORT</button>
+	</ul>
+    </div>
+
+	<!--Products-->
+    <div class="container">
+		
+		<div class="card short">
+            <div class="inner">
+                <img src="img/HaalandJ.png" class="hpimg">
+                <div>
+                    <h5>Erling Haaland Jersey</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/HaalandS.png" class="hpimg">
+                <div>
+                    <h5>Erling Haaland Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="card jersey">
+            <div class="inner">
+                <img src="img/FDJ.png" class="hpimg">
+                <div>
+                    <h5>Phil Foden Jersey</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/PFS.png" class="hpimg">
+                <div>
+                    <h5>Phil Foden Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card jersey">
+            <div class="inner">
+                <img src="img/KDJ.png" class="hpimg">
+                <div>
+                    <h5>Kevin De Bruyne jersey</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/KDS.png" class="hpimg">
+                <div>
+                    <h5>Kevin De Bruyne Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card jersey">
+            <div class="inner">
+                <img src="img/EDSJ.png" class="hpimg">
+                <div>
+                    <h5>Goalkeeper jersey</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/ESS.png" class="hpimg">
+                <div>
+                    <h5>Goalkeeper Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/HaalandTJ.png" class="hpimg">
+                <div>
+                    <h5>Erling Haaland Thir Jersey</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/HaalandTS.png" class="hpimg">
+                <div>
+                    <h5>Erling Haaland Thir Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/JGTJ.png" class="hpimg">
+                <div>
+                    <h5>Jack Grealish Jersey</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/JGTS.png" class="hpimg">
+                <div>
+                    <h5>Jack Grealish Short</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/Shirt1.png" class="hpimg">
+                <div>
+                    <h5>Man city black t-shirt</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/Shirt2.png" class="hpimg">
+                <div>
+                    <h5>Man city orange t-shirt</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+		
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/Shirt3.png" class="hpimg">
+                <div>
+                    <h5>Man city blue t-shirt</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/shirt4.png" class="hpimg">
+                <div>
+                    <h5>Manchester city Red t-shirt</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card short">
+            <div class="inner">
+                <img src="img/short1.png" class="hpimg">
+                <div>
+                    <h5>Manchester city blue t-shirt</h5>
+                    <a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+		<div class="card jersey">
+            <div class="inner">
+                <img src="img/shirt5.png" class="hpimg">
+                <div>
+                    <h5>Women's Pre-Match Jersey</h5>
+					<a href="index.html"><button class="my-button">BUY</button></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+	<script type="text/javascript" src="js/shopping.js"></script>
+ 
+</body>
+
+</html>
