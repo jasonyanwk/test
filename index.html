@@ -25,7 +25,32 @@
         <li class="header-li"><a href="#">About</a></li>
         <li class="header-li"><a href="#">Services</a></li>
         <li class="header-li"><a href="#">Contact</a></li>
-      </ul>
+      </ul><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.product {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.product.fade-out {
+  transform: translate(-500px, -500px) scale(0);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+        </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product">Product 1</div>
+        <div class="product">Product 2</div>
+        <div class="product">Product 3</div>
+      </div>
+</body>
+</html>
     </nav>
   </header>
   <br>

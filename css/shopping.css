@@ -22,7 +22,6 @@
   
 .menu li {
     margin:1rem;
-    
   }
 
 .menu li a {
@@ -43,8 +42,6 @@
     margin-bottom: 2rem;
     margin-left: 0.5%;
     background: rgba(0, 153, 255, 0.1);
-    
-    
   }
 
 .hpimg {
@@ -55,6 +52,21 @@
 .inner {
         text-align: center;
     }
+
+/* image size setting */
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+.image-container img {
+    transition: transform 0.3s ease;
+  }
+  
+.image-container:hover img {
+    transform: scale(1.2);
+  }
+
 
 /*buy button*/
 .my-button {
@@ -69,6 +81,54 @@
         background-color: rgb(0, 0, 0);
     }
 
+
+/* Product category settings */
+.productlist-button {
+    text-align: center;
+    background-color: #0eaedf;
+    border: none;
+    padding: 1rem 1rem;
+    margin: 1rem;
+    border-radius: 3rem;
+      }
+
+   
+/* cart button and number  */
+.badge {
+        position: relative;
+        top: -30px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      
+      .modal-content {
+        background-color: #fff;
+        width: 300px;
+        padding: 20px;
+        margin: 100px auto;
+        text-align: center;
+      }
+      
+      .close {
+        float: right;
+        cursor: pointer;
+      }
 
 
 /*Deforms with the size of the web page*/
