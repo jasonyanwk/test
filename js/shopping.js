@@ -24,71 +24,123 @@ container.prepend(newCard);
 
 
 
+// cart button setting
+var count = 0;
 
+function buyToCart() {
+  var badge = document.querySelector('.badge');
+  count++;
 
+  badge.textContent = count;
 
+  var modal = document.getElementById("successModal");
+  modal.style.display = "block";
 
-function addToCart() {
-    var badge = document.querySelector('.badge');
-    var count = parseInt(badge.textContent); // get products count
-  
-    count++;
-  
-    // refresh the count of cart
-    badge.textContent = count;
-  
-    var modal = document.getElementById("successModal");
-    modal.style.display = "block";
-  
-    // time of chat
-    setTimeout(function() {
-      modal.style.display = "none";
-    }, 2000);
-  }
-  
-  function closeModal() {
-    // close buy chat 
-    var modal = document.getElementById("successModal");
+  setTimeout(function() {
     modal.style.display = "none";
+  }, 1000);
+}
+
+
+
+
+
+
+        
+//cart
+function openNewPage(event) {
+  event.preventDefault();
+  var cartContainer = document.getElementById("cartContainer");
+  cartContainer.classList.add("open");
+}
+
+function closeCart() {
+  var cartContainer = document.getElementById("cartContainer");
+  cartContainer.classList.remove("open");
+}
+
+function addToCart(product) {
+  var itemName, itemPrice, itemImage;
+
+  if (product === 'haalandJersey') {
+    itemName = "Erling Haaland Jersey";
+    itemPrice = 300;
+    itemImage = "img/FDJ.png";
+  } else if (product === 'fodenJersey') {
+    itemName = "Phil Foden Jersey";
+    itemPrice = 300;
+    itemImage = "img/FDJ.png";
+  } else if (product === 'fodenShort') {
+    itemName = "Phil Foden Short";
+    itemPrice = 199;
+    itemImage = "img/PFS.png";
   }
 
+  var cartContainer = document.getElementById("cartContainer");
+  var card = document.createElement("div");
+  card.classList.add("cartcard");
 
+  var image = document.createElement("img");
+  image.src = itemImage;
 
+  var info = document.createElement("div");
 
+  var name = document.createElement("h5");
+  name.textContent = itemName;
 
+  var price = document.createElement("span");
+  price.classList.add("price");
+  price.textContent = "$" + itemPrice.toFixed(2) + " HKD";
 
+  var deleteButton = document.createElement("button");
+  deleteButton.textContent = "Remove";
+  deleteButton.classList.add("delete-button");
+  deleteButton.addEventListener("click", function() {
+    removeProduct(card);
+  });
 
-  function openNewPage(event) {
-    event.preventDefault(); // Prevent default link behavior
-  
-    // Create a new div element as the new page
-    var newPage = document.createElement('div');
-    newPage.setAttribute('id', 'newPage');
-  
-    // Create a close button element
-    var closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.addEventListener('click', function() {
-      newPage.remove(); // Remove cart page
-    });
-  
-    //Add close button to cart page
-    newPage.appendChild(closeButton);
+  info.appendChild(name);
+  info.appendChild(price);
 
-   // The new page of the shopping cart 
-   //(requires 1/3 of the position and does not need to jump to a new page)
-    newPage.style.position = 'fixed';
-    newPage.style.top = '0';
-    newPage.style.right = '0'; 
-    newPage.style.width = '33.33%'; // Occupies 1/3 of the width of the current page
-    newPage.style.height = '100%';
-    newPage.style.backgroundColor = 'rgba(255,255, 255, 0.8)';
-    newPage.style.display = 'flex';
-    newPage.style.justifyContent = 'center';
-    newPage.style.alignItems = 'center';
+  var contentWrapper = document.createElement("div");
+  contentWrapper.appendChild(image);
+  contentWrapper.appendChild(info);
 
-    //Add the new page to the body element of the current page
-    document.body.appendChild(newPage);
+  card.appendChild(contentWrapper);
+  card.appendChild(deleteButton);
 
+  cartContainer.appendChild(card);
+
+  calculateTotalPrice();
+}
+
+function removeProduct(card) {
+  var cartContainer = document.getElementById("cartContainer");
+  cartContainer.removeChild(card);
+  card.remove();
+
+  if (count > 0) {
+    count--;
   }
-  
+
+  calculateTotalPrice();
+}
+
+function calculateTotalPrice() {
+  var cartContainer = document.getElementById("cartContainer");
+  var cards = cartContainer.getElementsByClassName("cartcard");
+  var total = 0;
+
+  if (cards.length > 0) {
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var priceElement = card.getElementsByClassName("price")[0];
+      var priceText = priceElement.textContent;
+      var price = parseFloat(priceText.replace("$", ""));
+      total += price;
+    }
+  }
+
+  var totalElement = document.getElementById("totalPrice");
+  totalElement.textContent = "Total: $" + total.toFixed(2) + " HKD";
+}

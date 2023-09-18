@@ -20,13 +20,24 @@
 			<li><a href="#">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="#">Services</a></li>
-            <li>
-                <a href="#" id="cartButton" onclick="openNewPage(event)">
-                  <img src="img/shoppingcart.png" width="30" height="30" alt="Image">
-                  <span class="badge">0</span>
-                </a>
-              </li>
-		  </ul>
+                <li>
+                  <a href="#" id="cartButton" onclick="openNewPage(event)">
+                    <img src="img/shoppingcart.png" width="30" height="30" alt="Image">
+                    <span class="badge">0</span>
+                  </a>
+                </li>
+              </ul>
+            
+              <div id="cartContainer">
+                <div id="closeButton" onclick="closeCart()">Close</div>
+                <button id="clearButton" onclick="clearCart()">Clear Cart</button>
+            
+                <div id="totalPrice"></div>
+              </div>
+          
+            <div id="cartContainer">
+              <div id="closeButton" onclick="closeCart()">Close</div>
+            </div>
 		</nav>
 	  </header>
     
@@ -41,177 +52,140 @@
 
 	<!--Products-->
     <div class="container">
-       
-		<div class="card short">
-            <div class="image-container">
-            <div class="inner">
-                <img src="img/HaalandJ.png" class="hpimg">
-                <div>
-                    <h5>Erling Haaland Jersey</h5>
-                   <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
-                </div>
-            </div>
+
+        <div class="zoom-window" id="zoomWindow"></div>
+
+        <div class="card short">
+                <div class="inner">
+                    <img src="img/HaalandJ.png" class="hpimg">
+                    <div>
+                        <h5>Erling Haaland Jersey</h5>
+                       <div onclick="buyToCart()"> <button class="my-button" onclick="addToCart('haalandJersey')">BUY</button></div>
+                    </div>
             </div>
         </div>
-
-		<div class="card short">
-            <div class="image-container">
-            <div class="inner">
-                <img src="img/HaalandS.png" class="hpimg">
-                <div>
-                    <h5>Erling Haaland Short</h5>
-                    <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
-                </div>
-            </div>
-            </div>
-        </div>
-
+        
         <div class="card jersey">
-            <div class="image-container">
-            <div class="inner">
+              <div class="inner">
                 <img src="img/FDJ.png" class="hpimg">
                 <div>
-                    <h5>Phil Foden Jersey</h5>
-                    <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                  <h5>Phil Foden Jersey</h5>
+                  <div onclick="buyToCart()"><button class="my-button" onclick="addToCart('fodenJersey')">BUY</button></div>
                 </div>
             </div>
-            </div>
-        </div>
-
-		<div class="card short">
-            <div class="image-container">
-            <div class="inner">
+          </div>
+          
+          <div class="card short">
+              <div class="inner">
                 <img src="img/PFS.png" class="hpimg">
                 <div>
-                    <h5>Phil Foden Short</h5>
-                    <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                  <h5>Phil Foden Short</h5>
+                  <div onclick="buyToCart()"><button class="my-button" onclick="addToCart('fodenShort')">BUY</button></div>
                 </div>
             </div>
-            </div>
-        </div>
+          </div>
 
         <div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/KDJ.png" class="hpimg">
                 <div>
                     <h5>De Bruyne jersey</h5>
-                    <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    <div onclick="buyToCart()"></div> <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                     </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card short">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/KDS.png" class="hpimg">
                 <div>
                     <h5>De Bruyne Short</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
-                </div>
-            </div>
+                    </div>
             </div>
         </div>
 
         <div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/EDSJ.png" class="hpimg">
                 <div>
                     <h5>Goalkeeper jersey</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card short">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/ESS.png" class="hpimg">
                 <div>
                     <h5>Goalkeeper Short</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/HaalandTJ.png" class="hpimg">
                 <div>
                     <h5>Haaland Thir Jersey</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card short">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/HaalandTS.png" class="hpimg">
                 <div>
                     <h5>Haaland Thir Short</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/JGTJ.png" class="hpimg">
                 <div>
                     <h5>Jack Grealish Jersey</h5>
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
+                    </div>
                 </div>
-            </div>
-            </div>
         </div>
 
 		<div class="card short">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/JGTS.png" class="hpimg">
                 <div>
                     <h5>Jack Grealish Short</h5>
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
-            </div>
-            </div>
+        </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/Shirt1.png" class="hpimg">
                 <div>
                     <h5>Man city black shirt</h5>
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
-            </div>
-            </div>
+        </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/Shirt2.png" class="hpimg">
                 <div>
                     <h5>Man city orange shirt</h5>
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
-            </div>
-            </div>
+        </div>
         </div>
 		
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/Shirt3.png" class="hpimg">
                 <div>
@@ -219,11 +193,9 @@
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
             </div>
-            </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/shirt4.png" class="hpimg">
                 <div>
@@ -231,11 +203,9 @@
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
             </div>
-            </div>
         </div>
 
 		<div class="card short">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/short1.png" class="hpimg">
                 <div>
@@ -243,11 +213,9 @@
                     <button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
             </div>
-            </div>
         </div>
 
 		<div class="card jersey">
-            <div class="image-container">
             <div class="inner">
                 <img src="img/shirt5.png" class="hpimg">
                 <div>
@@ -255,15 +223,14 @@
 					<button  class="my-button" id="buyButton" onclick="addToCart()">BUY</button>
                 </div>
             </div>
-            </div>
         </div>
         
     </div>
-<!-- 模态框 -->
+<!-- modal box -->
 <div id="successModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <p>Successfully added to shopping cart！</p>
+      <p>Successfully added to shopping cart</p>
     </div>
   </div>
 
