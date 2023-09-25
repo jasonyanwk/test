@@ -16,10 +16,6 @@ function showAllProducts() {
     }
 }
 
-// Insert the newly added product card at the front of the container
-var container = document.querySelector(".container");
-var newCard = document.querySelector(".card.jersey:last-child");
-container.prepend(newCard);
 
 
 
@@ -62,18 +58,20 @@ function closeCart() {
 function addToCart(product) {
   var itemName, itemPrice, itemImage;
 
-  if (product === 'haalandJersey') {
-    itemName = "Erling Haaland Jersey";
+  if (product === 'HaalandJersey') {
+    itemName = "Haaland Jersey";
     itemPrice = 300;
-    itemImage = "img/FDJ.png";
-  } else if (product === 'fodenJersey') {
-    itemName = "Phil Foden Jersey";
-    itemPrice = 300;
-    itemImage = "img/FDJ.png";
-  } else if (product === 'fodenShort') {
-    itemName = "Phil Foden Short";
+    itemImage = "img/HaalandTJ.png";
+  }
+  if (product === 'Haalandshort') {
+    itemName = "Haaland Short";
     itemPrice = 199;
-    itemImage = "img/PFS.png";
+    itemImage = "img/HaalandTS.png";
+  }
+  if (product === 'Edersonjersey') {
+    itemName = "Ederson Jersey";
+    itemPrice = 300;
+    itemImage = "img/EDSJ.png";
   }
 
   var cartContainer = document.getElementById("cartContainer");
@@ -141,6 +139,59 @@ function calculateTotalPrice() {
     }
   }
 
+  // save amount in sessionStorage
+  sessionStorage.setItem("totalAmount", total.toFixed(2));
+  
   var totalElement = document.getElementById("totalPrice");
   totalElement.textContent = "Total: $" + total.toFixed(2) + " HKD";
 }
+
+
+
+// payment button
+function createPaymentButton() {
+  var cartContainer = document.getElementById("cartContainer");
+
+  var paymentButton = document.createElement("button");
+  paymentButton.textContent = "Pay Now";
+  paymentButton.classList.add("payment-button-cn");
+  paymentButton.addEventListener("click", function() {
+    var cards = document.getElementsByClassName("cartcard");
+    if (cards.length > 0) {
+      showPurchaseProcessingMessage();
+      setTimeout(function() {
+        window.location.href = "com3105_approval.html";
+      }, 2000);
+      
+    } else {
+      showEmptyCartMessage();
+    }
+  });
+
+  var paymentContainer = document.createElement("div");
+  paymentContainer.classList.add("payment-container");
+  paymentContainer.appendChild(paymentButton);
+
+  cartContainer.appendChild(paymentContainer);
+}
+
+// buy fail
+function showEmptyCartMessage() {
+  var emptyCartMessage = document.getElementById("emptyCartMessage");
+  emptyCartMessage.style.display = "block";
+
+  setTimeout(function() {
+    emptyCartMessage.style.display = "none";
+  }, 1000);
+}
+
+// buy success
+function showPurchaseProcessingMessage() {
+  var purchaseProcessingMessage = document.getElementById("purchaseProcessingMessage");
+  purchaseProcessingMessage.style.display = "block";
+}
+
+createPaymentButton();
+
+
+
